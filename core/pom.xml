@@ -29,8 +29,7 @@
   </parent>
 
   <artifactId>shc-core</artifactId>
-  <version>spark-2.1.0-hbase-1.2.0-0.1</version>
-  <description>suport for ots</description>
+  <version>spark-2.1.0-hbase-1.2.0</version>
   <packaging>jar</packaging>
   <name>HBase Spark Connector Project Core</name>
 
