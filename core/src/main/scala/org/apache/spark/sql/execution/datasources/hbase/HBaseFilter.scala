@@ -164,9 +164,9 @@ object HBaseFilter extends Logging{
     def Greater(attribute: String, value: Any): HRF[Array[Byte]]  = {
         process(value, relation, attribute,
         bound => {
-          if (relation.singleKey) {
+          if (relation.singleKey) { //根据主键搜索时，因为集成了ots，所以将该filter置为已处理
             HRF(bound.greater.map(x => ScanRange(Some(Bound(x.low, true)),
-              Some(Bound(x.upper, true)))), TypedFilter.empty)
+              Some(Bound(x.upper, true)))), TypedFilter.empty, true)
           } else {
             val s = bound.greater.map( x=>
               ScanRange(relation.rows.length,
@@ -206,10 +206,10 @@ object HBaseFilter extends Logging{
     def Less(attribute: String, value: Any): HRF[Array[Byte]]  = {
       process(value, relation, attribute,
         bound => {
-          if (relation.singleKey) {
+          if (relation.singleKey) { //根据主键搜索时，因为集成了ots，所以将该filter置为已处理
             HRF(bound.less.map(x =>
               ScanRange(Some(Bound(x.low, true)),
-                Some(Bound(x.upper, true)))), TypedFilter.empty)
+                Some(Bound(x.upper, true)))), TypedFilter.empty, true)
           } else {
             val s = bound.less.map( x=>
               ScanRange(relation.rows.length,
