@@ -24,12 +24,12 @@
   <parent>
     <groupId>com.hortonworks</groupId>
     <artifactId>shc</artifactId>
-    <version>spark-2.1.0-hbase-1.2.0</version>
+    <version>spark-2.2.0-hbase-1.2.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>shc-core</artifactId>
-  <version>spark-2.1.0-hbase-1.2.0-0.1</version>
+  <version>spark-2.2.0-hbase-1.2.0-0.1</version>
   <description>Support for OTS</description>
   <packaging>jar</packaging>
   <name>HBase Spark Connector Project Core</name>
