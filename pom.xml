@@ -28,7 +28,7 @@
   </parent>
   <groupId>com.hortonworks</groupId>
   <artifactId>shc</artifactId>
-  <version>spark-2.2.0-hbase-1.2.0</version>
+  <version>spark-2.2.0.cloudera2-hbase-1.2.0</version>
   <packaging>pom</packaging>
   <name>HBase Spark Connector Project Parent POM</name>
   <url>https://github.com/hortonworks-spark/shc</url>
@@ -47,7 +47,7 @@
   </distributionManagement>   
 
   <properties>
-    <spark.version>2.2.0</spark.version>
+    <spark.version>2.2.0.cloudera2</spark.version>
     <hbase.version>1.2.0</hbase.version>
     <phoenix.version>4.14.0-HBase-1.2</phoenix.version>
     <test_classpath_file>${project.build.directory}/spark-test-classpath.txt</test_classpath_file>
@@ -70,6 +70,10 @@
   </modules>
 
   <repositories>
+    <repository>
+      <id>cloudera</id>
+      <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
     <repository>
       <id>central</id>
       <!-- This should be at top, it makes maven try the central repo first and then others and hence faster dep resolution -->
